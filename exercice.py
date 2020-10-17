@@ -20,8 +20,12 @@ def reverse_data(data: list = None):
         while not lifo.empty():
             liste.append(lifo.get())
             
+        liste_trie = sorted(liste)
+        for element in liste_trie:
+            lifo.put(element)
+            
 
-    reversed_data = None  # Stocker le résultat ici
+    reversed_data = lifo  # Stocker le résultat ici
 
     return reversed_data
 
