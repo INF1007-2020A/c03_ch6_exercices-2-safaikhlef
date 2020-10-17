@@ -11,7 +11,15 @@ def reverse_data(data: list = None):
     # et les retourner en ordre inverse, sans utiliser de liste.
 
     if data is None:
-        pass  # Demander les valeurs ici
+        lifo = LifoQueue()
+        for element in range (10):
+            lifo.put(float(input("Entrez une valeur.")))
+            
+        #liste = [lifo.pop() for _ in range(lifo.qsize())], qsize pas fiable si plusieurs personnes en même temps, mais si tout seul très bien, prend la longueur au début, si quelqu'un ajoute un élément entre temps je ne viderais pas complètement la pile
+        liste = []
+        while not lifo.empty():
+            liste.append(lifo.get())
+            
 
     reversed_data = None  # Stocker le résultat ici
 
